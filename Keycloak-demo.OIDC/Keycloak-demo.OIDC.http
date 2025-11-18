@@ -1,0 +1,6 @@
+@Keycloak_demo.OIDC_HostAddress = http://localhost:5251
+
+GET {{Keycloak_demo.OIDC_HostAddress}}/index
+Accept: application/json
+
+###
