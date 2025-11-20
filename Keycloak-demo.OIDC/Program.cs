@@ -92,7 +92,7 @@ public class Program
 
         // Add Authorization services
 
-        //Other way to enable role-based authorization if keyclock mapper was not configured
+        // Other way to enable role-based authorization if keyclock mapper was not configured
         builder.Services.AddTransient<IClaimsTransformation, RoleClaimsTransformation>();
         builder.Services.AddAuthorization();
         builder.Services.AddHttpContextAccessor(); // Needed to get tokens for API calls
