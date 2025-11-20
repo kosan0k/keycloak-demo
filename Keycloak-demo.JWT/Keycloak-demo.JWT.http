@@ -1,0 +1,6 @@
+@Keycloak_demo.JWT_HostAddress = http://localhost:5098
+
+GET {{Keycloak_demo.JWT_HostAddress}}/index/
+Accept: application/json
+
+###
