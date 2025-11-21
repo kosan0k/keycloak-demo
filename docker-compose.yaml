@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    volumes:
+      # Mount our trusted certs into the container
+      - C:\dev-certs\dev.crt:/opt/keycloak/conf/server.crt
+      - C:\dev-certs\dev.key:/opt/keycloak/conf/server.key
+    environment:
+      # Admin credentials
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+
+      # ----- HTTPS Configuration -----
+      # Tell Keycloak to use the mounted certificate files
+      KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/server.crt       
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/server.key  
+
+      # ----- Hostname Configuration -----
+      # This MUST match the certificate's Common Name (CN)
+      KC_HOSTNAME: keycloak.dev.local
+
+    ports:
+      - "8443:8443" # HTTPS port
+
+    command:
+      - start-dev # Use 'start' for production
