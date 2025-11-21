@@ -1,6 +1,6 @@
 # 🚀 Project Overview
 
-This repository provides a complete, architecture-focused **learning template and reference implementation** for integrating modern .NET 8 applications with Keycloak.
+This repository provides a complete, architecture-focused **learning template and reference implementation** for integrating modern .NET applications with Keycloak.
 
 The core principle of this guide is **strict HTTPS-only enforcement** in the local development environment. By avoiding insecure shortcuts like disabling `RequireHttpsMetadata` or using simple HTTP, this repository teaches the proper, production-aligned way to handle certificate trust, token validation, and session management.
 
